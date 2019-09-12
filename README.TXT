@@ -1,10 +1,12 @@
+README
 # Chatter
 
 ## Do not use if you are a beginner!
 
 Chatter can be used with a textarea tag:
-    ---snippet---
-    <div id="chat">
+README
+---snippet---
+   <div id="chat">
     <textarea id="chatbox" readonly></textarea><br>
     <div id="user-msg-bar" contenteditable></div>
     <button id="Send" onclick="send(); reset();"><h5>Send</h5></button>
