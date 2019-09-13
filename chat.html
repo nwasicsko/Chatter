@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+    <style>
+      * {
+        margin:0px;
+        padding:0px;
+      }
+      
+      #chat
+      {
+        overflow: scroll;
+        width:300;
+        height:500px;
+      }
+      
+      #user-msg-bar
+      {
+        margin:0;
+        padding:0;
+        top:0;
+        min-height:15px;
+        max-height:15px;
+        background: white;
+        width:240px;
+        border: 1px solid blue;
+        justify-content: center;
+        outline-color: lightgray;
+      }
+      
+      #chatbox
+      {
+        padding:0 0 0 0;
+        max-width:300px;
+        min-width:300px;
+        max-height:300px;
+        min-height:300px;
+        overflow: scroll;
+        color:blue;
+        
+      }
+      
+      #Send {
+        border: none;
+        background-color: lime;
+        border-radius: 10%;
+        text-align: center;
+        width: 45px;
+        height:23px;
+        margin:center;
+        margin-left: 5px;
+      }
+      
+      #Send:hover {
+        background: black;
+        color: white;
+      }
+      
+      #chatbox:-webkit-scrollbar {
+        width:10px;
+      }
+      
+      #chatbox::-webkits-scrollbar-track {
+        background:gray;
+      }
+      
+      #chatbox::-webkits-scrollbar-thumb {
+        background:#f1f1f1;
+      }
+      
+      #box {
+        outline: #F1F1F1;
+        background: white;
+        border-color: white;
+        border-radius: 20px;
+        height:40px;
+        text-align: center;
+      }
+      
+      #chat {
+        float: center;
+      }
+    </style>
+  
+  <script>
+
+    
+    function send(){
+      var msgbar = document.getElementById("user-msg-bar");
+      var chatbox = document.getElementById("chatbox");
+      br = document.createElement("br");
+      chatbox.append("You: " + msgbar.value + "\n");
+      chatbox.appendChild(br);
+      
+      if (msgbar.value.length == 0) {
+        chatbox.append("please type something");
+        chatbox.appendChild(br);
+      }
+    }
+    
+    function reset() {
+      var msgbar = document.getElementById("box").value = "";
+    }
+  </script>
+  </head>
+  <body>
+    <div id="chat">
+      <div id="chatbox" readonly></div><br>
+      <div id="toolbar">
+      <input id="user-msg-bar" contenteditable><button id="Send" onclick="send(); reset();" title="Click To Send"><h5>Send</h5></button>
+      </div>
+      </div>
+      
+  </body>
+</html>
